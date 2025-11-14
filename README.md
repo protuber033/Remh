@@ -19,20 +19,29 @@ site/
    └─ installaties.html      → sub 6
 ```
 
-## Lokaal testen
+## Resultaat lokaal bekijken (stapsgewijs)
 
-De configurators rekenen hun prijzen nu uit via een Python-service. Start deze server vanuit de projectroot:
+1. **Dependencies controleren** – Python 3.10+ is voldoende; er zijn geen externe packages nodig.
+2. **Server starten** – Voer vanuit de projectroot het volgende uit:
 
-```bash
-python server.py --port 4173
-```
+   ```bash
+   python server.py --port 4173
+   ```
 
-Open daarna <http://localhost:4173> in je browser. De server:
+3. **Browser openen** – Navigeer naar <http://localhost:4173>. Je ziet nu de hoofdsite en kunt doorlinken naar alle subsites.
+4. **API checken (optioneel)** – Elke configurator verstuurt een `POST /api/quote`-request met een payload zoals `{"service": "uitbouw", "payload": {...}}`. De server handelt deze af en stuurt de prijs terug.
+5. **Aanpassingen testen** – Omdat alle subsites dezelfde `assets/styles.css` en `assets/main.js` delen, zie je front-end wijzigingen direct op iedere pagina.
 
-* dient alle statische assets uit de map `site/`;
-* exposeert `POST /api/quote` voor prijsberekeningen (`{"service": "uitbouw", "payload": {...}}`).
+## Wijzigingen committen & pushen naar GitHub
 
-Alle subsites gebruiken dezelfde stylesheet en configurator-script, dus wijzigingen in `assets/` gelden voor de hele omgeving.
+1. **Status controleren** – `git status` toont welke bestanden gewijzigd zijn.
+2. **Bestanden selecteren** – Gebruik `git add pad/naar/bestand` (of `git add .` voor alles) om ze klaar te zetten.
+3. **Commit maken** – `git commit -m "beschrijving van de wijziging"` legt je update vast in de lokale repository.
+4. **Branch kiezen (indien nodig)** – Maak een feature-branch aan met `git checkout -b mijn-branch` als je niet direct op `main` wilt werken.
+5. **Pushen naar GitHub** – Verstuur de commit(s) met `git push origin <branch-naam>`.
+6. **Pull Request openen** – Ga naar GitHub, kies je branch en klik op “Compare & pull request” om je werk te laten reviewen.
+
+> Tip: run na grote wijzigingen opnieuw `python server.py --port 4173` om te controleren of alles lokaal nog steeds werkt voordat je commit.
 
 ## Volgende stappen
 
