@@ -1,0 +1,78 @@
+
+<!doctype html>
+<html lang='nl'>
+  <head>
+    <meta charset='utf-8'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <title>Loodgieterservice configurator</title>
+    <link rel='stylesheet' href='assets/style.css'/>
+  </head>
+  <body>
+    <header>
+      <p class='eyebrow'>Configurator</p>
+      <h1>Loodgieterservice</h1>
+      <p>Spoedige hulp bij lekkage, verstopping en sanitair.</p>
+    </header>
+    <main>
+      <section class='service-hero'>
+        <div>
+          <p class='alert'>Transparante pakketten inclusief materiaal en voorrijkosten.</p>
+          <ul class='highlights'>
+            <li><span>✦</span>Transparante pakketprijzen</li>
+<li><span>✦</span>24/7 ontstop & reparatie</li>
+<li><span>✦</span>Direct iDEAL-aanbetaling</li>
+          </ul>
+        </div>
+        <div class='gallery'>
+          <img src='images/loodgieter-hero.svg' alt='Loodgieterservice hero visualisatie'>
+          <div class='gallery-mini'>
+            <img src='images/loodgieter-detail.svg' alt='Loodgieterservice stappen visual'>
+            <img src='images/loodgieter-blueprint.svg' alt='Loodgieterservice blauwdruk'>
+          </div>
+        </div>
+      </section>
+      <section class='config-layout'>
+        <article class='config-card'>
+          <form data-config-form data-service-id='loodgieter'>
+            <label class='question'>
+              <div class='question-heading'>
+                <span class='eyebrow'>Stap</span>
+                <h3>Postcode</h3>
+              </div>
+              <input type='text' name='postcode' placeholder='1234AB' required maxlength='6'>
+            </label>
+            
+                    <section class='question'>
+                      <div class='question-heading'>
+                        <span class='eyebrow'>Stap</span>
+                        <h3>Werkzaamheden</h3>
+                      </div>
+                      <div class='options'><label class='option'><input type='radio' name='pakket' value='ontstop' required><span>Ontstoppen afvoer <small>+€195</small></span></label>
+<label class='option'><input type='radio' name='pakket' value='lek' required><span>Lekkage opsporen + repareren <small>+€375</small></span></label>
+<label class='option'><input type='radio' name='pakket' value='toilet' required><span>Toilet vervangen <small>+€620</small></span></label></div>
+                    </section>
+                    
+
+                    <section class='question'>
+                      <div class='question-heading'>
+                        <span class='eyebrow'>Stap</span>
+                        <h3>Spoed binnen 24 uur</h3>
+                      </div>
+                      <div class='options'><label class='option'><input type='radio' name='spoed' value='normaal' required><span>Geen spoed <small>+€0</small></span></label>
+<label class='option'><input type='radio' name='spoed' value='spoed' required><span>Binnen 24 uur <small>+€140</small></span></label></div>
+                    </section>
+                    
+            <button type='submit'>Bereken prijs & offerte</button>
+          </form>
+        </article>
+        <aside class='summary' data-summary>
+          <h3>Indicatieve offerte</h3>
+          <strong data-total>€ 0</strong>
+          <ul class='breakdown' data-breakdown></ul>
+          <p data-message>Resultaat verschijnt hier.</p>
+        </aside>
+      </section>
+    </main>
+    <script src='assets/app.js' defer></script>
+  </body>
+</html>

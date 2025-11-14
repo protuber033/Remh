@@ -1,0 +1,405 @@
+{
+  "services": [
+    {
+      "id": "uitbouw",
+      "name": "Uitbouw",
+      "tagline": "Laat je woonruimte groeien met een lichtovergoten uitbouw.",
+      "summary": "Standaard achter- of zij-aanbouw inclusief isolatie, kozijnen en afwerking.",
+      "base_price": 9500,
+      "cta": "Start uitbouw configuratie",
+      "steps": [
+        {
+          "id": "breedte",
+          "label": "Breedte van de uitbouw",
+          "type": "choice",
+          "options": [
+            {
+              "label": "3 meter",
+              "value": "3m",
+              "price": 6000
+            },
+            {
+              "label": "4 meter",
+              "value": "4m",
+              "price": 7500
+            },
+            {
+              "label": "5 meter",
+              "value": "5m",
+              "price": 9200
+            }
+          ]
+        },
+        {
+          "id": "diepte",
+          "label": "Diepte",
+          "type": "choice",
+          "options": [
+            {
+              "label": "2,5 meter",
+              "value": "2.5m",
+              "price": 4200
+            },
+            {
+              "label": "3 meter",
+              "value": "3m",
+              "price": 5100
+            },
+            {
+              "label": "3,5 meter",
+              "value": "3.5m",
+              "price": 5900
+            }
+          ]
+        },
+        {
+          "id": "dak",
+          "label": "Dak & daglicht",
+          "type": "choice",
+          "options": [
+            {
+              "label": "Plat dak + lichtkoepel",
+              "value": "plat",
+              "price": 2300
+            },
+            {
+              "label": "Schuin dak + 2 daklichten",
+              "value": "schuin",
+              "price": 3100
+            },
+            {
+              "label": "Plat dak + lichtstraat",
+              "value": "lichtstraat",
+              "price": 4200
+            }
+          ]
+        },
+        {
+          "id": "afwerking",
+          "label": "Binnenafwerking",
+          "type": "choice",
+          "options": [
+            {
+              "label": "Sausklaar stucwerk",
+              "value": "stuc",
+              "price": 950
+            },
+            {
+              "label": "Spachtelputz",
+              "value": "spachtel",
+              "price": 1350
+            },
+            {
+              "label": "Inclusief schilderwerk",
+              "value": "paint",
+              "price": 1850
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Inclusief isolatie en kozijnen",
+        "Vergunningcheck optioneel",
+        "Directe planning na akkoord"
+      ]
+    },
+    {
+      "id": "dakkapel",
+      "name": "Dakkapel",
+      "tagline": "Meer licht en ruimte binnen \u00e9\u00e9n dag geplaatst.",
+      "summary": "Prefab kunststof dakkapel met HR++ glas en vergunningsadvies.",
+      "base_price": 5200,
+      "cta": "Stel je dakkapel samen",
+      "steps": [
+        {
+          "id": "breedte",
+          "label": "Breedte",
+          "type": "choice",
+          "options": [
+            {
+              "label": "2,5 meter",
+              "value": "2.5m",
+              "price": 2500
+            },
+            {
+              "label": "3,5 meter",
+              "value": "3.5m",
+              "price": 3300
+            },
+            {
+              "label": "4,5 meter",
+              "value": "4.5m",
+              "price": 4200
+            }
+          ]
+        },
+        {
+          "id": "hoogte",
+          "label": "Hoogte",
+          "type": "choice",
+          "options": [
+            {
+              "label": "Standaard",
+              "value": "std",
+              "price": 0
+            },
+            {
+              "label": "Verhoogd front",
+              "value": "plus",
+              "price": 900
+            }
+          ]
+        },
+        {
+          "id": "zonwering",
+          "label": "Buiten zonwering",
+          "type": "choice",
+          "options": [
+            {
+              "label": "Geen",
+              "value": "none",
+              "price": 0
+            },
+            {
+              "label": "Screens",
+              "value": "screens",
+              "price": 950
+            },
+            {
+              "label": "Rolluiken",
+              "value": "rolluiken",
+              "price": 1250
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Prefab plaatsing binnen 1 dag",
+        "HR++ of HR+++ glas standaard",
+        "Vergunningsadvies bij voorzijde"
+      ]
+    },
+    {
+      "id": "stuc-schilder",
+      "name": "Stuc & Schilder",
+      "tagline": "Strak stucwerk en duurzame verf in \u00e9\u00e9n bezoek.",
+      "summary": "Binnen- en buitenteams voor wanden, plafonds en kozijnen.",
+      "base_price": 1250,
+      "cta": "Plan stuc- en schilderwerk",
+      "steps": [
+        {
+          "id": "oppervlak",
+          "label": "Oppervlak (m\u00b2)",
+          "type": "number",
+          "min": 20,
+          "max": 250,
+          "price_per_unit": 32
+        },
+        {
+          "id": "afwerking",
+          "label": "Afwerking",
+          "type": "choice",
+          "options": [
+            {
+              "label": "Sausklaar",
+              "value": "saus",
+              "price": 0
+            },
+            {
+              "label": "Spachtelputz",
+              "value": "spachtel",
+              "price": 450
+            },
+            {
+              "label": "Schuurwerk",
+              "value": "schuur",
+              "price": 300
+            }
+          ]
+        },
+        {
+          "id": "kleur",
+          "label": "Aantal kleuren verf",
+          "type": "number",
+          "min": 1,
+          "max": 5,
+          "price_per_unit": 60
+        }
+      ],
+      "highlights": [
+        "Binnen- en buitenafwerking",
+        "Professionele verfmerken",
+        "Snelle oplevering per ruimte"
+      ]
+    },
+    {
+      "id": "kozijnen",
+      "name": "Kunststof kozijnen",
+      "tagline": "Onderhoudsarme kozijnen, deuren en schuifpuien.",
+      "summary": "HR+++ glas, ventilatieroosters en SKG** sluitwerk.",
+      "base_price": 4100,
+      "cta": "Configureer kozijnen",
+      "steps": [
+        {
+          "id": "ramen",
+          "label": "Aantal raamkozijnen",
+          "type": "number",
+          "min": 2,
+          "max": 12,
+          "price_per_unit": 750
+        },
+        {
+          "id": "deuren",
+          "label": "Aantal deuren of schuifpuien",
+          "type": "number",
+          "min": 1,
+          "max": 4,
+          "price_per_unit": 1450
+        },
+        {
+          "id": "kleur",
+          "label": "Kleur",
+          "type": "choice",
+          "options": [
+            {
+              "label": "Wit",
+              "value": "white",
+              "price": 0
+            },
+            {
+              "label": "Antraciet",
+              "value": "antraciet",
+              "price": 320
+            },
+            {
+              "label": "Houtnerf buiten",
+              "value": "hout",
+              "price": 580
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Kunststof kozijnen op maat",
+        "SKG3 hang- en sluitwerk",
+        "Kleur en structuur vrij te kiezen"
+      ]
+    },
+    {
+      "id": "loodgieter",
+      "name": "Loodgieterservice",
+      "tagline": "Spoedige hulp bij lekkage, verstopping en sanitair.",
+      "summary": "Transparante pakketten inclusief materiaal en voorrijkosten.",
+      "base_price": 250,
+      "cta": "Plan loodgieter",
+      "steps": [
+        {
+          "id": "pakket",
+          "label": "Werkzaamheden",
+          "type": "choice",
+          "options": [
+            {
+              "label": "Ontstoppen afvoer",
+              "value": "ontstop",
+              "price": 195
+            },
+            {
+              "label": "Lekkage opsporen + repareren",
+              "value": "lek",
+              "price": 375
+            },
+            {
+              "label": "Toilet vervangen",
+              "value": "toilet",
+              "price": 620
+            }
+          ]
+        },
+        {
+          "id": "spoed",
+          "label": "Spoed binnen 24 uur",
+          "type": "choice",
+          "options": [
+            {
+              "label": "Geen spoed",
+              "value": "normaal",
+              "price": 0
+            },
+            {
+              "label": "Binnen 24 uur",
+              "value": "spoed",
+              "price": 140
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Transparante pakketprijzen",
+        "24/7 ontstop & reparatie",
+        "Direct iDEAL-aanbetaling"
+      ]
+    },
+    {
+      "id": "installaties",
+      "name": "Installaties",
+      "tagline": "Ketel, warmtepomp, airco en zonnepanelen op maat.",
+      "summary": "Combinatiesets met monitoring, onderhoud en garantie.",
+      "base_price": 6400,
+      "cta": "Stel installatiepakket samen",
+      "steps": [
+        {
+          "id": "pakket",
+          "label": "Pakket",
+          "type": "choice",
+          "options": [
+            {
+              "label": "HR-ketel + hybride warmtepomp",
+              "value": "hybride",
+              "price": 5200
+            },
+            {
+              "label": "All-electric warmtepomp",
+              "value": "all-electric",
+              "price": 7800
+            },
+            {
+              "label": "Airco multi-split + zonnepanelen",
+              "value": "airco-solar",
+              "price": 6400
+            }
+          ]
+        },
+        {
+          "id": "panelen",
+          "label": "Aantal zonnepanelen",
+          "type": "number",
+          "min": 6,
+          "max": 24,
+          "price_per_unit": 275
+        },
+        {
+          "id": "inspectie",
+          "label": "Extra inspectie op locatie",
+          "type": "choice",
+          "options": [
+            {
+              "label": "Niet nodig",
+              "value": "nee",
+              "price": 0
+            },
+            {
+              "label": "Uitgebreide dakinspectie",
+              "value": "inspectie",
+              "price": 480
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Ketel, warmtepomp, airco en PV",
+        "Hybride en all-electric opties",
+        "Combinatie met planning & betaling"
+      ]
+    }
+  ]
+}

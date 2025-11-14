@@ -1,0 +1,88 @@
+
+<!doctype html>
+<html lang='nl'>
+  <head>
+    <meta charset='utf-8'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <title>Stuc & Schilder configurator</title>
+    <link rel='stylesheet' href='assets/style.css'/>
+  </head>
+  <body>
+    <header>
+      <p class='eyebrow'>Configurator</p>
+      <h1>Stuc & Schilder</h1>
+      <p>Strak stucwerk en duurzame verf in één bezoek.</p>
+    </header>
+    <main>
+      <section class='service-hero'>
+        <div>
+          <p class='alert'>Binnen- en buitenteams voor wanden, plafonds en kozijnen.</p>
+          <ul class='highlights'>
+            <li><span>✦</span>Binnen- en buitenafwerking</li>
+<li><span>✦</span>Professionele verfmerken</li>
+<li><span>✦</span>Snelle oplevering per ruimte</li>
+          </ul>
+        </div>
+        <div class='gallery'>
+          <img src='images/stuc-schilder-hero.svg' alt='Stuc & Schilder hero visualisatie'>
+          <div class='gallery-mini'>
+            <img src='images/stuc-schilder-detail.svg' alt='Stuc & Schilder stappen visual'>
+            <img src='images/stuc-schilder-blueprint.svg' alt='Stuc & Schilder blauwdruk'>
+          </div>
+        </div>
+      </section>
+      <section class='config-layout'>
+        <article class='config-card'>
+          <form data-config-form data-service-id='stuc-schilder'>
+            <label class='question'>
+              <div class='question-heading'>
+                <span class='eyebrow'>Stap</span>
+                <h3>Postcode</h3>
+              </div>
+              <input type='text' name='postcode' placeholder='1234AB' required maxlength='6'>
+            </label>
+            
+                    <section class='question'>
+                      <div class='question-heading'>
+                        <span class='eyebrow'>Stap</span>
+                        <h3>Oppervlak (m²)</h3>
+                      </div>
+                      <input type='number' name='oppervlak' min='20' max='250' step='1' required data-input-type='number'>
+                      <p class='hint'>€32 per eenheid</p>
+                    </section>
+                    
+
+                    <section class='question'>
+                      <div class='question-heading'>
+                        <span class='eyebrow'>Stap</span>
+                        <h3>Afwerking</h3>
+                      </div>
+                      <div class='options'><label class='option'><input type='radio' name='afwerking' value='saus' required><span>Sausklaar <small>+€0</small></span></label>
+<label class='option'><input type='radio' name='afwerking' value='spachtel' required><span>Spachtelputz <small>+€450</small></span></label>
+<label class='option'><input type='radio' name='afwerking' value='schuur' required><span>Schuurwerk <small>+€300</small></span></label></div>
+                    </section>
+                    
+
+                    <section class='question'>
+                      <div class='question-heading'>
+                        <span class='eyebrow'>Stap</span>
+                        <h3>Aantal kleuren verf</h3>
+                      </div>
+                      <input type='number' name='kleur' min='1' max='5' step='1' required data-input-type='number'>
+                      <p class='hint'>€60 per eenheid</p>
+                    </section>
+                    
+            <button type='submit'>Bereken prijs & offerte</button>
+          </form>
+        </article>
+        <aside class='summary' data-summary>
+          <h3>Indicatieve offerte</h3>
+          <strong data-total>€ 0</strong>
+          <ul class='breakdown' data-breakdown></ul>
+          <p data-message>Resultaat verschijnt hier.</p>
+        </aside>
+      </section>
+    </main>
+    <script src='assets/app.js' defer></script>
+  </body>
+</html>
