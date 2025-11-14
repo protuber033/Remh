@@ -1,0 +1,60 @@
+
+<!doctype html>
+<html lang='nl'>
+  <head>
+    <meta charset='utf-8'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <title>Installaties configurator</title>
+    <link rel='stylesheet' href='assets/style.css'/>
+  </head>
+  <body>
+    <header>
+      <h1>Installaties</h1>
+      <p>Ketel, warmtepomp, airco en zonnepanelen op maat.</p>
+    </header>
+    <main>
+      <section class='config-layout'>
+        <article class='config-card'>
+          <img src='images/installaties.svg' alt='Installaties illustratie' style='width:100%;border-radius:1rem;margin-bottom:1rem;'>
+          <p>Combinatiesets met monitoring, onderhoud en garantie.</p>
+          <form data-config-form data-service-id='installaties'>
+            <label class='question'>
+              <h3>Postcode</h3>
+              <input type='text' name='postcode' placeholder='1234AB' required maxlength='6'>
+            </label>
+            
+                    <section class='question'>
+                      <h3>Pakket</h3>
+                      <div class='options'><label class='option'><input type='radio' name='pakket' value='hybride' required><span>HR-ketel + hybride warmtepomp <small>+€5,200</small></span></label>
+<label class='option'><input type='radio' name='pakket' value='all-electric' required><span>All-electric warmtepomp <small>+€7,800</small></span></label>
+<label class='option'><input type='radio' name='pakket' value='airco-solar' required><span>Airco multi-split + zonnepanelen <small>+€6,400</small></span></label></div>
+                    </section>
+                    
+
+                    <section class='question'>
+                      <h3>Aantal zonnepanelen</h3>
+                      <input type='number' name='panelen' min='6' max='24' step='1' required data-input-type='number'>
+                      <p class='hint'>€275 per eenheid</p>
+                    </section>
+                    
+
+                    <section class='question'>
+                      <h3>Extra inspectie op locatie</h3>
+                      <div class='options'><label class='option'><input type='radio' name='inspectie' value='nee' required><span>Niet nodig <small>+€0</small></span></label>
+<label class='option'><input type='radio' name='inspectie' value='inspectie' required><span>Uitgebreide dakinspectie <small>+€480</small></span></label></div>
+                    </section>
+                    
+            <button type='submit'>Bereken prijs & offerte</button>
+          </form>
+        </article>
+        <aside class='summary' data-summary>
+          <h3>Indicatieve offerte</h3>
+          <strong data-total>€ 0</strong>
+          <ul class='breakdown' data-breakdown></ul>
+          <p data-message>Resultaat verschijnt hier.</p>
+        </aside>
+      </section>
+    </main>
+    <script src='assets/app.js' defer></script>
+  </body>
+</html>

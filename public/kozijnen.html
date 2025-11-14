@@ -1,0 +1,60 @@
+
+<!doctype html>
+<html lang='nl'>
+  <head>
+    <meta charset='utf-8'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <title>Kunststof kozijnen configurator</title>
+    <link rel='stylesheet' href='assets/style.css'/>
+  </head>
+  <body>
+    <header>
+      <h1>Kunststof kozijnen</h1>
+      <p>Onderhoudsarme kozijnen, deuren en schuifpuien.</p>
+    </header>
+    <main>
+      <section class='config-layout'>
+        <article class='config-card'>
+          <img src='images/kozijnen.svg' alt='Kunststof kozijnen illustratie' style='width:100%;border-radius:1rem;margin-bottom:1rem;'>
+          <p>HR+++ glas, ventilatieroosters en SKG** sluitwerk.</p>
+          <form data-config-form data-service-id='kozijnen'>
+            <label class='question'>
+              <h3>Postcode</h3>
+              <input type='text' name='postcode' placeholder='1234AB' required maxlength='6'>
+            </label>
+            
+                    <section class='question'>
+                      <h3>Aantal raamkozijnen</h3>
+                      <input type='number' name='ramen' min='2' max='12' step='1' required data-input-type='number'>
+                      <p class='hint'>€750 per eenheid</p>
+                    </section>
+                    
+
+                    <section class='question'>
+                      <h3>Aantal deuren of schuifpuien</h3>
+                      <input type='number' name='deuren' min='1' max='4' step='1' required data-input-type='number'>
+                      <p class='hint'>€1450 per eenheid</p>
+                    </section>
+                    
+
+                    <section class='question'>
+                      <h3>Kleur</h3>
+                      <div class='options'><label class='option'><input type='radio' name='kleur' value='white' required><span>Wit <small>+€0</small></span></label>
+<label class='option'><input type='radio' name='kleur' value='antraciet' required><span>Antraciet <small>+€320</small></span></label>
+<label class='option'><input type='radio' name='kleur' value='hout' required><span>Houtnerf buiten <small>+€580</small></span></label></div>
+                    </section>
+                    
+            <button type='submit'>Bereken prijs & offerte</button>
+          </form>
+        </article>
+        <aside class='summary' data-summary>
+          <h3>Indicatieve offerte</h3>
+          <strong data-total>€ 0</strong>
+          <ul class='breakdown' data-breakdown></ul>
+          <p data-message>Resultaat verschijnt hier.</p>
+        </aside>
+      </section>
+    </main>
+    <script src='assets/app.js' defer></script>
+  </body>
+</html>

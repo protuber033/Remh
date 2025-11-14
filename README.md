@@ -1,50 +1,49 @@
-# Bouw & Verbouw platform (demo)
+# Bouwen & Verbouwen demo
 
-Deze repository bevat een statische demo van de hoofdsite met zes subsites zoals beschreven in de opdracht. Elke subsite heeft een eigen configurator met live prijsindicatie, samenvatting en placeholders voor offerte, e-signature, betaling (Stripe/iDEAL) en planning (Cal.com).
+Complete herbouw van de hoofdsite met zes subsites, gebouwd vanuit één Python-applicatie. Het script `app.py` genereert de volledige front-end (HTML, CSS, AI-achtige SVG's) en levert meteen een API voor prijsindicaties.
 
-## Structuur
+## Projectstructuur
 
 ```
-site/
-├─ index.html                → hoofdsite met overzicht diensten en klantreis
-├─ assets/
-│  ├─ styles.css             → gedeeld design system
-│  └─ main.js                → gedeelde configurator-logica
-└─ services/
-   ├─ uitbouw.html           → sub 1
-   ├─ dakkapel.html          → sub 2
-   ├─ stuc-schilder.html     → sub 3
-   ├─ kozijnen.html          → sub 4
-   ├─ loodgieter.html        → sub 5
-   └─ installaties.html      → sub 6
+.
+├── app.py              # sitebuilder + API-server
+├── data/services.json  # brondata voor alle diensten
+├── public/             # gegenereerde site (build output)
+└── README.md
 ```
 
-## Resultaat lokaal bekijken (stapsgewijs)
+## Benodigdheden
 
-1. **Dependencies controleren** – Python 3.10+ is voldoende; er zijn geen externe packages nodig.
-2. **Server starten** – Voer vanuit de projectroot het volgende uit:
+* Python 3.11+
+* Geen extra packages nodig (alles gebruikt standaardbibliotheek)
 
-   ```bash
-   python server.py --port 4173
-   ```
+## Site genereren
 
-3. **Browser openen** – Navigeer naar <http://localhost:4173>. Je ziet nu de hoofdsite en kunt doorlinken naar alle subsites.
-4. **API checken (optioneel)** – Elke configurator verstuurt een `POST /api/quote`-request met een payload zoals `{"service": "uitbouw", "payload": {...}}`. De server handelt deze af en stuurt de prijs terug.
-5. **Aanpassingen testen** – Omdat alle subsites dezelfde `assets/styles.css` en `assets/main.js` delen, zie je front-end wijzigingen direct op iedere pagina.
+```
+python app.py build
+```
 
-## Wijzigingen committen & pushen naar GitHub
+Dit schrijft de volledige site weg naar `public/`, inclusief nieuwe SVG-beelden per dienst, frisse CSS en de servicepagina's.
 
-1. **Status controleren** – `git status` toont welke bestanden gewijzigd zijn.
-2. **Bestanden selecteren** – Gebruik `git add pad/naar/bestand` (of `git add .` voor alles) om ze klaar te zetten.
-3. **Commit maken** – `git commit -m "beschrijving van de wijziging"` legt je update vast in de lokale repository.
-4. **Branch kiezen (indien nodig)** – Maak een feature-branch aan met `git checkout -b mijn-branch` als je niet direct op `main` wilt werken.
-5. **Pushen naar GitHub** – Verstuur de commit(s) met `git push origin <branch-naam>`.
-6. **Pull Request openen** – Ga naar GitHub, kies je branch en klik op “Compare & pull request” om je werk te laten reviewen.
+## Lokale server
 
-> Tip: run na grote wijzigingen opnieuw `python server.py --port 4173` om te controleren of alles lokaal nog steeds werkt voordat je commit.
+```
+python app.py serve --port 4173
+```
 
-## Volgende stappen
+* Bezoek `http://localhost:4173` voor de hoofdsite.
+* De endpoint `POST /api/quote` berekent prijzen voor elke configurator.
+* Zodra je een veld wijzigt, wordt er live een prijsberekening getoond.
 
-* Koppel de offerte-/betalingsknoppen aan echte API’s (DocuSign, Stripe, Cal.com).
-* Vervang de placeholders voor AI-visuals door een server-side image-service.
-* Sluit een headless CMS of WordPress-multisite aan om content, prijzen en FAQ’s te beheren zonder code.
+## Deploy
+
+* Plaats de inhoud van `public/` op elke statische hosting naar keuze.
+* Draai `python app.py serve` op een backend voor het aanroepen van `/api/quote` of gebruik een serverless functie met dezelfde `PricingEngine`-logica.
+
+## Uitbreiden
+
+1. Voeg een dienst toe in `data/services.json`.
+2. Run `python app.py build`.
+3. Een nieuwe pagina + illustratie verschijnt automatisch.
+
+Met `app.py` is de gehele hoofdsite reproduceerbaar, eenvoudig te onderhouden en consistent qua look & feel.
