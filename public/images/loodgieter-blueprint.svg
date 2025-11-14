@@ -1,0 +1,13 @@
+
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 260'>
+  <rect width='420' height='260' rx='24' fill='#e2e8f0'/>
+  <g stroke='#2dd4bf' stroke-width='2' fill='none' opacity='0.8'>
+    <rect x='40' y='30' width='340' height='200' rx='18'/>
+    <rect x='70' y='60' width='120' height='80' rx='10'/>
+    <rect x='220' y='60' width='140' height='80' rx='10'/>
+    <rect x='70' y='160' width='120' height='50' rx='10'/>
+    <rect x='220' y='160' width='140' height='50' rx='10'/>
+    <line x1='210' y1='60' x2='210' y2='210' stroke-dasharray='6 6'/>
+  </g>
+  <text x='60' y='230' font-family='Manrope,Inter,sans-serif' font-size='18' fill='#0f172a'>Loodgieterservice</text>
+</svg>
