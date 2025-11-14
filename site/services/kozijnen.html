@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kunststof kozijnen configurator</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <p class="badge">Sub 4</p>
+      <h1>Kunststof kozijnen & puien</h1>
+      <p>Stel ramen, schuifpuien en deuren samen inclusief glas, kleur en veiligheidsopties. Alle prijzen zijn gebaseerd op onderhoudsarme kunststof profielen met SKG** hang- en sluitwerk.</p>
+      <div class="cta">
+        <a class="button primary" href="../index.html">← Terug naar hoofdsite</a>
+      </div>
+    </header>
+
+    <main class="config-layout">
+      <section class="config-card">
+        <div class="notice" data-notice></div>
+        <div class="stepper" data-stepper></div>
+        <div class="step-navigation" data-step-navigation>
+          <button class="button secondary" data-prev>Vorige</button>
+          <button class="button primary" data-next>Volgende</button>
+        </div>
+      </section>
+      <section class="summary-card">
+        <h3>Samenvatting</h3>
+        <p class="summary-total" data-summary-total>€0</p>
+        <p class="summary-status" data-summary-status aria-live="polite"></p>
+        <ul data-summary-list></ul>
+        <div class="summary-actions">
+          <button class="button primary" data-action="offer">Genereer offerte</button>
+          <button class="button secondary" data-action="sign">Digitaal tekenen</button>
+          <button class="button secondary" data-action="pay">Aanbetalen via iDEAL</button>
+          <button class="button secondary" data-action="schedule">Plan direct</button>
+        </div>
+      </section>
+    </main>
+
+    <section class="content-card">
+      <h2>Planning & opvolging</h2>
+      <ul class="timeline" data-timeline></ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Veelgestelde vragen</h2>
+      <div class="faq-list" data-faq></div>
+    </section>
+
+    <section class="assistant-card" data-assistant></section>
+
+    <footer>
+      <span>© 2025 Bouw & Verbouw</span>
+      <nav>
+        <a href="#">Voorwaarden</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookieverklaring</a>
+      </nav>
+    </footer>
+
+    <script type="module">
+      import { bootstrapConfigurator } from '../assets/main.js';
+
+      const config = {
+        serviceId: 'kozijnen',
+        summaryFields: [
+          { id: 'element', label: 'Elementtype' },
+          { id: 'breedte', label: 'Breedte (mm)' },
+          { id: 'hoogte', label: 'Hoogte (mm)' },
+          { id: 'glas', label: 'Glas' },
+          { id: 'kleur', label: 'Kleur' },
+          { id: 'veiligheid', label: 'Veiligheid' },
+        ],
+        steps: [
+          {
+            id: 'element',
+            title: '1. Elementkeuze',
+            description: 'Kies raam, deur of schuifpui.',
+            fields: [
+              {
+                id: 'element',
+                label: 'Type',
+                type: 'select',
+                options: [
+                  { label: 'Vast raam', value: 'vast' },
+                  { label: 'Draaikiepraam', value: 'draaikiep' },
+                  { label: 'Kiepschuifpui', value: 'kiepschuif' },
+                  { label: 'Hefschuifpui', value: 'hefschuif' },
+                  { label: 'Tuindeur set', value: 'tuindeur' },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'afmetingen',
+            title: '2. Afmetingen',
+            description: 'Standaard sets tussen 600 en 6000 mm.',
+            fields: [
+              { id: 'breedte', label: 'Breedte (mm)', type: 'number', min: 600, max: 6000, default: 2800 },
+              { id: 'hoogte', label: 'Hoogte (mm)', type: 'number', min: 600, max: 2600, default: 2200 },
+            ],
+          },
+          {
+            id: 'glas',
+            title: '3. Glas & ventilatie',
+            description: 'HR++ standaard, triple of veiligheidsglas optioneel.',
+            fields: [
+              {
+                id: 'glas',
+                label: 'Glas',
+                type: 'select',
+                options: [
+                  { label: 'HR++', value: 'hrpp' },
+                  { label: 'HR+++ (triple)', value: 'triple' },
+                  { label: 'HR++ + gelaagd veiligheidsglas', value: 'veilig' },
+                ],
+              },
+              {
+                id: 'roosters',
+                label: 'Ventilatieroosters',
+                type: 'select',
+                options: [
+                  { label: 'Geen', value: 'geen' },
+                  { label: 'Per element', value: 'per' },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'kleur',
+            title: '4. Kleur & structuur',
+            description: 'RAL en houtnerf folies.',
+            fields: [
+              {
+                id: 'kleur',
+                label: 'Kleur buitenzijde',
+                type: 'select',
+                options: [
+                  { label: 'Wit', value: 'wit' },
+                  { label: 'Antraciet', value: 'antraciet' },
+                  { label: 'Houtnerf', value: 'houtnerf' },
+                ],
+              },
+              {
+                id: 'kleurBinnen',
+                label: 'Kleur binnenzijde',
+                type: 'select',
+                options: [
+                  { label: 'Wit', value: 'wit' },
+                  { label: 'Antraciet', value: 'antraciet' },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'veiligheid',
+            title: '5. Veiligheid & planning',
+            description: 'SKG** standaard, upgrade naar SKG*** of PKVW mogelijk.',
+            fields: [
+              {
+                id: 'veiligheid',
+                label: 'Veiligheidsniveau',
+                type: 'select',
+                options: [
+                  { label: 'SKG** standaard', value: 'skg2' },
+                  { label: 'SKG*** + PKVW', value: 'skg3' },
+                ],
+              },
+              { id: 'planning', label: 'Voorkeur levering', type: 'month' },
+              { id: 'naam', label: 'Naam', type: 'text', required: true },
+              { id: 'email', label: 'E-mail', type: 'email', required: true },
+            ],
+          },
+        ],
+        timeline: [
+          { title: 'Inmeten', copy: 'Digitale check of fysieke afspraak bij complexe situaties.' },
+          { title: 'Productie', copy: '6–8 weken levertijd, inclusief glas en beslag.' },
+          { title: 'Montage', copy: 'Plaatsing met afwerking en afvoeren oud kozijn.' },
+        ],
+        faq: [
+          {
+            question: 'Leveren jullie ook aluminium?',
+            answer: 'Deze online configurator richt zich op kunststof. Aluminium kan via een maatwerktraject.',
+          },
+          {
+            question: 'Zijn horren inbegrepen?',
+            answer: 'Horren zijn optioneel en worden apart geprijsd in de offerte.',
+          },
+          {
+            question: 'Welke garanties gelden?',
+            answer: '10 jaar op profiel en verkleuring, 5 jaar op beslag.',
+          },
+        ],
+        assistant: {
+          title: 'AI-FAQ kozijnen',
+          copy: 'Krijg uitleg over SKG-veiligheid, glasopties en onderhoud.',
+          example: 'Voorbeeld: "Wat is het verschil tussen SKG** en SKG***?"',
+        },
+      };
+
+      bootstrapConfigurator(config);
+    </script>
+  </body>
+</html>

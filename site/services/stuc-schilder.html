@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stuc & schilder configurator</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <p class="badge">Sub 3</p>
+      <h1>Stuc- & schilderwerk configurator</h1>
+      <p>Combineer binnen- en buitenwerk, stel de afwerking per oppervlak in en ontvang meteen een prijs per m² inclusief opties zoals voorstrijk en kitwerk.</p>
+      <div class="cta">
+        <a class="button primary" href="../index.html">← Terug naar hoofdsite</a>
+      </div>
+    </header>
+
+    <main class="config-layout">
+      <section class="config-card">
+        <div class="notice" data-notice></div>
+        <div class="stepper" data-stepper></div>
+        <div class="step-navigation" data-step-navigation>
+          <button class="button secondary" data-prev>Vorige</button>
+          <button class="button primary" data-next>Volgende</button>
+        </div>
+      </section>
+      <section class="summary-card">
+        <h3>Samenvatting</h3>
+        <p class="summary-total" data-summary-total>€0</p>
+        <p class="summary-status" data-summary-status aria-live="polite"></p>
+        <ul data-summary-list></ul>
+        <div class="summary-actions">
+          <button class="button primary" data-action="offer">Genereer offerte</button>
+          <button class="button secondary" data-action="sign">Digitaal tekenen</button>
+          <button class="button secondary" data-action="pay">Aanbetalen via iDEAL</button>
+          <button class="button secondary" data-action="schedule">Plan direct</button>
+        </div>
+      </section>
+    </main>
+
+    <section class="content-card">
+      <h2>Planning & opvolging</h2>
+      <ul class="timeline" data-timeline></ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Veelgestelde vragen</h2>
+      <div class="faq-list" data-faq></div>
+    </section>
+
+    <section class="assistant-card" data-assistant></section>
+
+    <footer>
+      <span>© 2025 Bouw & Verbouw</span>
+      <nav>
+        <a href="#">Voorwaarden</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookieverklaring</a>
+      </nav>
+    </footer>
+
+    <script type="module">
+      import { bootstrapConfigurator } from '../assets/main.js';
+
+      const config = {
+        serviceId: 'stuc',
+        notice: 'Speciale afwerkingen zoals beton ciré of tadelakt vallen buiten dit online traject.',
+        summaryFields: [
+          { id: 'type', label: 'Werkzaamheden' },
+          { id: 'm2Binnen', label: 'Binnen m²' },
+          { id: 'm2Buiten', label: 'Buiten m²' },
+          { id: 'afwerkingBinnen', label: 'Afwerking binnen' },
+          { id: 'afwerkingBuiten', label: 'Afwerking buiten' },
+        ],
+        steps: [
+          {
+            id: 'type',
+            title: '1. Werksoort',
+            description: 'Kies binnen, buiten of een combinatie.',
+            fields: [
+              {
+                id: 'type',
+                label: 'Werkzaamheden',
+                type: 'select',
+                options: [
+                  { label: 'Binnen', value: 'binnen' },
+                  { label: 'Buiten', value: 'buiten' },
+                  { label: 'Binnen + buiten', value: 'beide' },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'binnen',
+            title: '2. Binnenwerk',
+            description: 'Vul m² in voor wanden/plafond en kies stuc en schilderwerk.',
+            fields: [
+              { id: 'm2Binnen', label: 'Binnen m²', type: 'number', min: 0, default: 80 },
+              {
+                id: 'afwerkingBinnen',
+                label: 'Stucafwerking',
+                type: 'select',
+                options: [
+                  { label: 'Sausklaar', value: 'sausklaar' },
+                  { label: 'Spachtelputz', value: 'spachtelputz' },
+                  { label: 'Schuurwerk', value: 'schuurwerk' },
+                ],
+              },
+              {
+                id: 'lagenBinnen',
+                label: 'Aantal verflagen',
+                type: 'select',
+                options: [
+                  { label: '1 laag', value: '1' },
+                  { label: '2 lagen', value: '2' },
+                ],
+              },
+              {
+                id: 'kitwerkBinnen',
+                label: 'Kitwerk',
+                type: 'select',
+                options: [
+                  { label: 'Geen', value: 'nee' },
+                  { label: 'Wel', value: 'ja' },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'buiten',
+            title: '3. Buitenwerk',
+            description: 'Optioneel gevels, kozijnen en boeidelen.',
+            fields: [
+              { id: 'm2Buiten', label: 'Gevel m²', type: 'number', min: 0, default: 40 },
+              {
+                id: 'afwerkingBuiten',
+                label: 'Schilderafwerking',
+                type: 'select',
+                options: [
+                  { label: 'Watergedragen', value: 'water' },
+                  { label: 'Alkyd', value: 'alkyd' },
+                ],
+              },
+              {
+                id: 'kozijnen',
+                label: 'Aantal kozijnen/deuren',
+                type: 'number',
+                min: 0,
+                default: 6,
+              },
+            ],
+          },
+          {
+            id: 'planning',
+            title: '4. Planning & gegevens',
+            description: 'Voorkeur maand en contactgegevens.',
+            fields: [
+              { id: 'maand', label: 'Voorkeur maand', type: 'month' },
+              { id: 'naam', label: 'Naam', type: 'text', required: true },
+              { id: 'email', label: 'E-mail', type: 'email', required: true },
+            ],
+          },
+        ],
+        timeline: [
+          { title: 'Opname', copy: 'Digitale intake + foto’s of betaalde opname bij maatwerk.' },
+          { title: 'Planning', copy: 'Binnenwerk 2–3 weken, buitenwerk afhankelijk van weer.' },
+          { title: 'Uitvoering', copy: 'Professioneel team, stofafzuiging en opleverrapport.' },
+        ],
+        faq: [
+          {
+            question: 'Welke verfmerken gebruiken jullie?',
+            answer: 'Sikkens en Sigma pro-lijnen, standaard in onze calculatie inbegrepen.',
+          },
+          {
+            question: 'Kunnen jullie meubels afschermen?',
+            answer: 'Ja, afplakken en afdekken hoort bij onze standaard werkwijze.',
+          },
+          {
+            question: 'Hoelang is de offerte geldig?',
+            answer: '30 dagen, tenzij anders vermeld in de prijsactie.',
+          },
+        ],
+        assistant: {
+          title: 'AI-FAQ afbouw',
+          copy: 'Vraag naar droogtijden, onderhoud of kleuradvies. De assistant verwijst bij speciale technieken door.',
+          example: 'Voorbeeld: "Hoeveel tijd zit er tussen stucen en schilderen?"',
+        },
+      };
+
+      bootstrapConfigurator(config);
+    </script>
+  </body>
+</html>
