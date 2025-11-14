@@ -1,0 +1,61 @@
+
+<!doctype html>
+<html lang='nl'>
+  <head>
+    <meta charset='utf-8'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <title>Dakkapel configurator</title>
+    <link rel='stylesheet' href='assets/style.css'/>
+  </head>
+  <body>
+    <header>
+      <h1>Dakkapel</h1>
+      <p>Meer licht en ruimte binnen één dag geplaatst.</p>
+    </header>
+    <main>
+      <section class='config-layout'>
+        <article class='config-card'>
+          <img src='images/dakkapel.svg' alt='Dakkapel illustratie' style='width:100%;border-radius:1rem;margin-bottom:1rem;'>
+          <p>Prefab kunststof dakkapel met HR++ glas en vergunningsadvies.</p>
+          <form data-config-form data-service-id='dakkapel'>
+            <label class='question'>
+              <h3>Postcode</h3>
+              <input type='text' name='postcode' placeholder='1234AB' required maxlength='6'>
+            </label>
+            
+                    <section class='question'>
+                      <h3>Breedte</h3>
+                      <div class='options'><label class='option'><input type='radio' name='breedte' value='2.5m' required><span>2,5 meter <small>+€2,500</small></span></label>
+<label class='option'><input type='radio' name='breedte' value='3.5m' required><span>3,5 meter <small>+€3,300</small></span></label>
+<label class='option'><input type='radio' name='breedte' value='4.5m' required><span>4,5 meter <small>+€4,200</small></span></label></div>
+                    </section>
+                    
+
+                    <section class='question'>
+                      <h3>Hoogte</h3>
+                      <div class='options'><label class='option'><input type='radio' name='hoogte' value='std' required><span>Standaard <small>+€0</small></span></label>
+<label class='option'><input type='radio' name='hoogte' value='plus' required><span>Verhoogd front <small>+€900</small></span></label></div>
+                    </section>
+                    
+
+                    <section class='question'>
+                      <h3>Buiten zonwering</h3>
+                      <div class='options'><label class='option'><input type='radio' name='zonwering' value='none' required><span>Geen <small>+€0</small></span></label>
+<label class='option'><input type='radio' name='zonwering' value='screens' required><span>Screens <small>+€950</small></span></label>
+<label class='option'><input type='radio' name='zonwering' value='rolluiken' required><span>Rolluiken <small>+€1,250</small></span></label></div>
+                    </section>
+                    
+            <button type='submit'>Bereken prijs & offerte</button>
+          </form>
+        </article>
+        <aside class='summary' data-summary>
+          <h3>Indicatieve offerte</h3>
+          <strong data-total>€ 0</strong>
+          <ul class='breakdown' data-breakdown></ul>
+          <p data-message>Resultaat verschijnt hier.</p>
+        </aside>
+      </section>
+    </main>
+    <script src='assets/app.js' defer></script>
+  </body>
+</html>
